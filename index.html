@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>UMBC IS - Home</title>
+
+<style>
+body { font-family: Arial, sans-serif; margin: 20px; background: #fff; color: #000; }
+header, footer { background: #ffd200; padding: 10px; text-align: center; }
+nav a { margin: 0 10px; text-decoration: none; color: black; font-weight: bold; }
+section { margin-top: 20px; }
+h1, h2 { color: #111; }
+hr { border: 1px solid #ccc; }
+button { background: #111; color: #fff; padding: 8px 12px; border: none; margin: 5px; cursor: pointer; border-radius: 4px; }
+button:hover { background: #333; }
+#news-content { margin-top: 15px; padding: 10px; background: #f9f9f9; border-left: 4px solid #ffd200; }
+</style>
+
+</head>
+<body>
+
+<header>
+  <h1>UMBC - Department of Information Systems</h1>
+  <nav>
+    <a href="index.html" style="text-decoration:underline;">Home</a>
+    <a href="undergraduate.html">Undergraduate Program</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+</header>
+
+<section>
+  <h2>Welcome to UMBC IS Department</h2>
+  <p>Welcome to the Department of Information Systems at UMBC. Our interdisciplinary programs equip students with the high-demand skills needed for success in IT and IS careers. Situated close to major technology hubs, our suburban campus provides an ideal environment for aspiring tech professionals. With multiple degree options, we offer flexible pathways for applying information systems across a range of industries. If you’d like to learn more, please reach out to us—we’re happy to answer your questions.</p>
+  <p><a href="undergraduate_simple.html">Learn about our Undergraduate Program</a></p>
+</section>
+
+<section>
+  <h2>News</h2>
+  <button onclick="showNews('session')">Info Session – This Friday at 2 PM</button>
+  <button onclick="showNews('minor')">New Cybersecurity Minor</button>
+
+  <div id="news-content">
+    <p>Select a news item to learn more!</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 UMBC IS Department | Prototype for Lab 4</p>
+</footer>
+
+<script>
+function showNews(item) {
+  const newsDiv = document.getElementById('news-content');
+  let content = '';
+  if (item === 'session') {
+    content = `
+      <h3>Info Session – This Friday at 2 PM</h3>
+      <p>Join us in the Information Systems Building for an overview of our degree programs, internships, and upcoming events. Faculty and advisors will be available to answer your questions about the IS major and career opportunities in tech.</p>
+    `;
+  } else if (item === 'minor') {
+    content = `
+      <h3>New Cybersecurity Minor</h3>
+      <p>UMBC’s Department of Information Systems is excited to announce a new Cybersecurity minor launching this semester! Students can explore courses in network security, ethical hacking, and digital forensics—ideal for those pursuing IT and security careers.</p>
+    `;
+  }
+  newsDiv.innerHTML = content;
+}
+</script>
+
+</body>
+</html>
